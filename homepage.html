@@ -1,11 +1,29 @@
 <html>
 		<link rel="stylesheet" href = "style.css" type = "text/css" />
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<head>
 		<title> Activity Box </title>
 	</head>
 		<body>
 				<div class = "header">
 					<span class = "maintitle">Activity Box</span>
+					<div id="wrapper">
+        			<div id="wheel">
+           			<div id="inner-wheel">
+               		<div class="sec"><span class="fa fa-bell-o"></span></div>
+                	<div class="sec"><span class="fa fa-comment-o"></span></div>
+                	<div class="sec"><span class="fa fa-smile-o"></span></div>
+                	<div class="sec"><span class="fa fa-heart-o"></span></div>
+                	<div class="sec"><span class="fa fa-star-o"></span></div>
+                	<div class="sec"><span class="fa fa-lightbulb-o"></span></div>
+            	</div>       
+            <div id="spin">
+                <div id="inner-spin"></div>
+            </div>
+            <div id="shine"></div>
+        	</div>
+        	<div id="txt"></div>
+  			</div>
 				</div>
 				<div class="content">
 					<span class = "zipheader">Please enter the desired Zip Code</span>
@@ -15,7 +33,20 @@
 					</form>
 					<button class = "Zipcode"> Generate </button>
 				</div>
-		
-
+				<div class = "riskfactor">
+					<h1>Risk Factor</h1>
+					<button style = "background:red"> High </button>
+					<button style = "background:yellow"> Meduim </button>
+					<button style = "background:green"> Low </button>
+				</div>
+				<!--
+				<div class = "map">
+				</div>-->
+				<div class = "price">
+				<h1>Pricing</h1>
+					<button style = "background:green"><h2>$</h2></button>
+					<button style = "background:green"><h2>$$</h2></button>
+					<button style = "background:green"><h2>$$$</h2></button>
+				</div>
 		</body>
 </html>

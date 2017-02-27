@@ -14,9 +14,12 @@ body{
 
 }
 
+.pricing{
+	margin-top:50px
+}
 .header{
 	width:600px;
-	height:500px;
+	height:150px;
 	margin:auto;
 	text-align:center;  
 }

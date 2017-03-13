@@ -2,34 +2,55 @@
 <html>
 		<link rel="stylesheet" href = "style.css" type = "text/css" />
 	<head>
-		<title> Activity Box </title>
+		<title> Grub-Hub </title>
 	</head>
 		<body>
 				<div class = "header">
-					<span class = "maintitle">Activity Box</span>
+					<span class = "maintitle">Grub-Hub</span>
 				</div>
-				<div class="content">
-				<div class = "riskfactor">
-					<h1>Risk Factor</h1>
-					<button style = "background:#8B008B"> High </button>
-					<button style = "background:#8B008B"> Meduim </button>
-					<button style = "background:#8B008B"> Low </button>
-				</div>
-				<div class = "price">
-				<h1>Pricing</h1>
-					<button style = "background:#8B008B"><h2>$</h2></button>
-					<button style = "background:#8B008B"><h2>$$</h2></button>
-					<button style = "background:#8B008B"><h2>$$$</h2></button>
-				</div>
-				<div class="pricing">
-					<span class = "zipheader">Please enter the desired Zip Code</span>
-					<form>
-						Zip Code:<br>
-						<input type = "text" name="Zipcode"><br>
-					</form>
-					<button style = "background:#8B008B"><h2> Generate </h2></button>
+				<div class = "content">
+					<div class="content-left">
+						<div class = "category">
+							<h1>Category</h1>
+							<button class = "cbutton"> <span> Food </span></button>
+							<button class = "cbutton"> <span> Rec. </span></button>
+							<button class = "cbutton"> <span> Sports </span></button>
+						</div>
+						<div class = "price">
+							<h1>Pricing</h1>
+							<button class = "cbutton"> <span>$</span></button>
+							<button class = "cbutton"> <span>$$</span></button>
+							<button class = "cbutton"> <span>$$$</span></button>
+							</div>
+						<div class="pricing">
+								<form>
+									<h1>Zip Code:<h1><br>
+									<input type = "text" name="Zipcode"><br>
+								</form>
+							<button class = "cbutton"> <span> Go </span></button>
+						</div>
+					</div>
+					<div class = "content-center">
+					 Wheel placeholder.
+					 
+					</div>
+				
+					<div class = "content-right">
+						<div class = "riskfactor">
+							<h1>Risk Factor</h1>
+							<button class = "cbutton"> <span>High</span></button>
+							<button class = "cbutton"> <span>Med.</span></button>
+							<button class = "cbutton"> <span>Low</span></button>
+						</div>
+						<div class = "distance">
+							<h1>Distance</h1>
+							<button class = "cbutton"> <span>10 mi</span></button>
+							<button class = "cbutton"> <span>20 mi</span></button>
+							<button class = "cbutton"> <span>50 mi</span></button>
+						</div>
 					</div>
 				</div>
+				
 
 				<!--
 				<div class = "map">

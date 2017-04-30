@@ -6,15 +6,21 @@
 	</head>
 		<body>
 				<div class = "header">
-					<span class = "maintitle">Grub-Hub</span>
 				</div>
 				<div class = "content">
 					<div class="content-left">
 						<div class = "category">
 							<h1>Category</h1>
-							<button class = "cbutton"> <span> Fast Food </span></button>
+							<form id = "type" action = "yelp.js">
+							<button class = "cbutton" onclick="myFunction()" value = "Fast Food"> <span> Fast Food </span></button>
 							<button class = "cbutton"> <span> Dine In </span></button>
 							<button class = "cbutton"> <span> Take Out</span></button>
+							</form>
+								<script>
+									function myFunction() {
+									document.getElementById("type").submit();
+									}
+								</script>
 						</div>
 						<div class = "price">
 							<h1>Pricing</h1>
@@ -27,11 +33,11 @@
 									<h1>Zip Code:<h1><br>
 									<input type = "text" name="Zipcode"><br>
 								</form>
-							<button class = "cbutton"> <span> Go </span></button>
+							<!-- <button class = "cbutton"> <span> Go </span></button>-->
 						</div>
 					</div>
 					<div class = "content-center">
-						<li><img src="logo.png"/> 
+						<a href= "output.html"><li><img src="logo.png"/></a>
 					</div>
 				
 					<div class = "content-right">

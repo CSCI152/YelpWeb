@@ -1,7 +1,8 @@
-
+<!DOCTYPE html>
 <html>
 		<link rel="stylesheet" href = "style.css" type = "text/css" />
 	<head>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<title> Grub-Hub </title>
 	</head>
 		<body>
@@ -9,31 +10,26 @@
 				</div>
 				<div class = "content">
 					<div class="content-left">
-						<div class = "category">
+						<div class = "category" >
 							<h1>Category</h1>
-							<form id = "type" action = "yelp.js">
-							<button class = "cbutton" onclick="myFunction()" value = "Fast Food"> <span> Fast Food </span></button>
-							<button class = "cbutton"> <span> Dine In </span></button>
-							<button class = "cbutton"> <span> Take Out</span></button>
-							</form>
-								<script>
-									function myFunction() {
-									document.getElementById("type").submit();
-									}
-								</script>
+							<button class = "cbutton" id = "FF" val = "Fast Food" > <span> Fast Food </span></button>
+							<button class = "cbutton" id = "DI" val = "Dine In"> <span> Dine In </span></button>
+							<button class = "cbutton" id = "TO" val = "Take Out"> <span> Take Out</span></button>
+							<input class = "inputs" id="typeof" >
 						</div>
 						<div class = "price">
 							<h1>Pricing</h1>
-							<button class = "cbutton"> <span>$</span></button>
-							<button class = "cbutton"> <span>$$</span></button>
-							<button class = "cbutton"> <span>$$$</span></button>
+							<button class = "cbutton" id = "D" val = "1"> <span>$</span></button>
+							<button class = "cbutton" id = "DD" val = "2"> <span>$$</span></button>
+							<button class = "cbutton" id = "DDD" val = "3"> <span>$$$</span></button>
+							<input class = "inputs" id="price" >
 							</div>
 						<div class="pricing">
-								<form>
+								
 									<h1>Zip Code:<h1><br>
-									<input type = "text" name="Zipcode"><br>
-								</form>
-							<!-- <button class = "cbutton"> <span> Go </span></button>-->
+									<input type = "text" id = "locay"  name="Zipcode"><br>
+									<button class = "go" type = "button" id="output"><span> Go </span></button>
+								
 						</div>
 					</div>
 					<div class = "content-center">
@@ -49,17 +45,88 @@
 						</div>
 						<div class = "distance">
 							<h1>Distance</h1>
-							<button class = "cbutton"> <span>10 mi</span></button>
-							<button class = "cbutton"> <span>20 mi</span></button>
-							<button class = "cbutton"> <span>50 mi</span></button>
+							<button class = "cbutton"  id = "ten"> <span>10 mi</span></button>
+							<button class = "cbutton"  id = "twenty"> <span>20 mi</span></button>
+							<button class = "cbutton"  id = "fifty"> <span>50 mi</span></button>
+							<input class = "inputs" id="radius" >
 						</div>
 					</div>
 				</div>
 				
 
-				<!--
-				<div class = "map">
-				</div>-->
+			
+<script>
+$(document).ready(function() {
+  if (typeof(Storage) !== "undefined") {
+  
+  //-------------------------------------------------	Type of Food	----------------------------------------------------------------------------//
+  $("#FF").click(function(event){
+  localStorage.setItem("typeof", "Indian" + " restaurant")
+  
+  })
+  
+  $("#DI").click(function(event){
+  localStorage.setItem("typeof", "Italian" + " restaurant")
+  })  
+  
+  $("#TO").click(function(event){
+  localStorage.setItem("typeof", "Mexican" + " restaurant")
+  })
 
-		</body>
+	//-----------------------------------------------	Radius	------------------------------------------------------------------------------------//
+  $("#ten").click(function(event){
+	localStorage.setItem("radius", "10")
+  })
+  
+  $("#twenty").click(function(event){
+	localStorage.setItem("radius", "20")
+  })
+  
+  $("#fifty").click(function(event){
+	localStorage.setItem("radius", "50")
+  })
+  
+  //-------------------------------------------------	Price	------------------------------------------------------------------------------------//
+	$("#D").click(function(event){
+    localStorage.setItem("price", '1')
+	})
+	
+	$("#DD").click(function(event){
+    localStorage.setItem("price", '2') 
+	})
+	
+	$("#DDD").click(function(event){
+    localStorage.setItem("price", '3') 
+	})
+	  //-------------------------------------------------	Location	--------------------------------------------------------------------------------//
+  $("#output").click(function(event){
+	if ($('#location').val()!==''){
+      localStorage.setItem("location", $('#locay').val())
+      localStorage.setItem("has_location", 'true')
+	}
+	else {
+      if (navigator.geolocation) {
+        localStorage.setItem("has_location", 'false')
+        navigator.geolocation.getCurrentPosition(function(position) {
+          localStorage.setItem("latitude", position.coords.latitude)
+          localStorage.setItem("longitude", position.coords.longitude)
+        },function() {
+          alert("Location Not Found. Please enter the zip code manually.")
+        });
+      }
+    }
+    })
+	
+  }
+
+ //--------------------------------------------------------------------------------
+  else {
+      alert("Browser not supported")
+    }
+    document.getElementById("output").onclick = function () {
+        location.href = "results.html";
+    };
+});
+</script>
+</body>
 </html>

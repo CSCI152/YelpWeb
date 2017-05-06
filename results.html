@@ -1,10 +1,101 @@
 <!DOCTYPE html>
 <html>
-<body>
+<link rel="stylesheet" href = "style.css" type = "text/css" />
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Restaurants</title>
 
-<h1>My First Heading</h1>
+  </head>
 
-<p>My first paragraph.</p>
 
-</body>
+  <div class="button">
+      <h2 id="head1">
+    Click 'Results' to view results!
+	</h2>
+	<h2 id="head2">
+    Here is what we found!
+	</h2>
+	
+    <button class="rbutton" type="button" id="get"><span>Results!</span></button>
+  </div>
+  <div class = "outputs" align="center">
+  <p id="firstName"></p>
+  <p id="firstPhone"></p>
+  <p id="firstWeb"></p>
+  <p id="firstRating"></p>
+  <div id="pic"></div>
+  
+  </div>
+  <div class="button">
+    <button class="rbutton" type="button" id="nextResult">Show next restaurant!</button>
+    <button class="rbutton" onclick="location.href='custom.html'" type="button" id="searchAgain">Search again!</button>
+  </div>
+  <script>
+  $(document).ready(function(){
+  $("#nextResult").hide()
+  $("#searchAgain").hide()
+  var to_pass = new Object()
+
+  to_pass.price=localStorage.getItem("price")
+  to_pass.radius=localStorage.getItem("radius")
+  to_pass.term=localStorage.getItem("typeof")
+
+  if(localStorage.getItem("has_location")==='true'){
+    to_pass.location=localStorage.getItem("location")
+  } else{
+    to_pass.latitude=localStorage.getItem("latitude")
+    to_pass.longtitude=localStorage.getItem("longitude")
+  }
+  to_pass.location=localStorage.getItem("location")
+	$("#head2").hide()
+	
+	console.log(localStorage.getItem("number"))
+      var order = 0 ;
+
+  $("#get").click(function(event){
+    $.get( "https://guarded-fortress-21120.herokuapp.com/request", to_pass, function(data) {
+       // console.log(data.total);
+      if(data.total===0){
+        $("#firstName").text("No results found, please search again")
+        $("#searchAgain").show()
+      } else {
+
+        $("#firstName").text(`Name: ${data.businesses[order].name}`)
+        $("#firstPhone").text(`Phone: ${data.businesses[order].display_phone}`)
+        $("#firstWeb").html(`website: <a target=\'_blank\' href=${data.businesses[order].url}><b> here</b></a>`)
+        $("#firstRating").text(`Yelp Rating: ${data.businesses[order].rating}`)
+        $("#pic").html(`<img src="${data.businesses[order].image_url}" style="width:304px;height:228px;">`)
+        $("#nextResult").show()
+        $("#searchAgain").show()
+        $("#get").hide()
+          order = order + 1;
+          console.log(localStorage.getItem("number"))
+      }
+
+      })
+    })
+    $("#nextResult").click(function(event){
+      $.get( "https://guarded-fortress-21120.herokuapp.com/request", to_pass, function(data) {
+          //order = localStorage.getItem("number")
+          console.log(localStorage.getItem("number"))
+          try{
+            console.log(data.businesses[order].name)
+          } catch(err){
+            alert("I have run out of recommendations for you! Please search again!")
+          }
+          $("#firstName").text(`Name: ${data.businesses[order].name}`)
+
+          $("#firstPhone").text(`Phone: ${data.businesses[order].display_phone}`)
+          $("#firstWeb").html(`website: <a target=\'_blank\' href=${data.businesses[order].url}><b> here</b></a>`)
+          $("#firstRating").text(`Yelp Rating: ${data.businesses[order].rating}`)
+          $("#pic").html(`<img src="${data.businesses[order].image_url}" style="width:304px;height:228px;">`)
+          $("#nextResult").show()
+          $("#searchAgain").show()
+          $("#get").hide()
+          order= order+1;
+
+        })
+      })
+})
+  </script>
 </html>

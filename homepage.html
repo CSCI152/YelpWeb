@@ -14,7 +14,7 @@
 							<h1>Category</h1>
 							<button class = "cbutton" id = "FF" val = "Fast Food" > <span> Fast Food </span></button>
 							<button class = "cbutton" id = "DI" val = "Dine In"> <span> Dine In </span></button>
-							<button class = "cbutton" id = "TO" val = "Take Out"> <span> Take Out</span></button>
+							<button class = "cbutton" id = "TO" val = "Ethnic"> <span> Ethnic Food </span></button>
 							<input class = "inputs" id="typeof" >
 						</div>
 						<div class = "price">
@@ -24,16 +24,14 @@
 							<button class = "cbutton" id = "DDD" val = "3"> <span>$$$</span></button>
 							<input class = "inputs" id="price" >
 							</div>
-						<div class="pricing">
-								
-									<h1>Zip Code:<h1><br>
+						<div class="zipcode">
+									<h1>Zip Code:<h1>
 									<input type = "text" id = "locay"  name="Zipcode"><br>
 									<button class = "go" type = "button" id="output"><span> Go </span></button>
-								
 						</div>
 					</div>
 					<div class = "content-center">
-						<a href= "output.html"><li><img src="logo.png"/></a>
+						<li><img class = "logo" src="logo.png"/>
 					</div>
 				
 					<div class = "content-right">
@@ -45,9 +43,9 @@
 						</div>
 						<div class = "distance">
 							<h1>Distance</h1>
-							<button class = "cbutton"  id = "ten"> <span>10 mi</span></button>
-							<button class = "cbutton"  id = "twenty"> <span>20 mi</span></button>
-							<button class = "cbutton"  id = "fifty"> <span>50 mi</span></button>
+							<button class = "cbutton"  id = "ten"> <span>10mi</span></button>
+							<button class = "cbutton"  id = "twenty"> <span>20mi</span></button>
+							<button class = "cbutton"  id = "twentyfive"> <span>25mi</span></button>
 							<input class = "inputs" id="radius" >
 						</div>
 					</div>
@@ -82,7 +80,7 @@ $(document).ready(function() {
 	localStorage.setItem("radius", "20")
   })
   
-  $("#fifty").click(function(event){
+  $("#twentfive").click(function(event){
 	localStorage.setItem("radius", "50")
   })
   

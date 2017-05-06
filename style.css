@@ -22,6 +22,13 @@ body{
 	text-align:center;  
 }
 
+h1{
+	color: #BDBDBD;
+}
+
+.outputs{
+	color: #BDBDBD;
+}
 /*------------------------------ CONTENT BOX ---------------------------------------*/
 .content div{
 	width: 33.33%; height: initial; float: left;
@@ -64,8 +71,21 @@ body{
 	width:100% !important;
 	text-align: center;
 }
+.zipcode{
+	width:100% !important;
+	text-align: center;
+}
+/*
 /* -------------------------------------------- CONTENT BOX ENDS ---------------------------------*/
 
+.inputs{
+	display: none;
+}
+
+.logo {
+    height: auto;
+    max-width: 100%;
+}
 /*----------------------------------------BUTTON STYLING----------------------------------------------*/
 
 .cbutton {
@@ -106,7 +126,93 @@ body{
   opacity: 1;
   right: 0;
 }
+/*----------------------------------------BUTTON STYLING----------------------------------------------*/
 
+.go {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.go span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.go span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.go:hover span {
+  padding-right: 25px;
+}
+
+.go:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/* --------------------------------------- Stylesheet results ----------------------------------------*/
+  h2{
+    text-align: center;
+    color: #f4511e;
+  }
+ .rbutton {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.rbutton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.rbutton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.rbutton:hover span {
+  padding-right: 25px;
+}
+
+.rbutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+ .button{
+    text-align: center;
+  }
 /*--------------------------------------BUTTON STYLING ENDS-------------------------------------------*/
 
 .maintitle{

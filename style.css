@@ -26,9 +26,28 @@ h1{
 	color: #BDBDBD;
 }
 
-.outputs{
-	color: #BDBDBD;
+#wrap {
+    padding: 40px;
+    text-align: center;
+    width: 100%;  
 }
+
+#left {
+     display: inline-block;    
+     padding: 20px;
+	 color: #BDBDBD;
+	 font-size: 30px;
+	 line-height: 65px;
+		
+}
+#right {
+     display: inline-block;    
+     padding: 20px;
+	 color: #BDBDBD;
+	 font-size: 30px;
+		
+}
+
 /*------------------------------ CONTENT BOX ---------------------------------------*/
 .content div{
 	width: 33.33%; height: initial; float: left;

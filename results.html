@@ -18,17 +18,24 @@
 	
     <button class="rbutton" type="button" id="get"><span>Results!</span></button>
   </div>
-  <div class = "outputs" align="center">
-  <p id="firstName"></p>
-  <p id="firstPhone"></p>
-  <p id="firstWeb"></p>
-  <p id="firstRating"></p>
-  <div id="pic"></div>
   
-  </div>
+<div id = "wrap" >
+
+	<div id = "left">
+	<p id="firstName"></p>
+	<p id="firstPhone"></p>
+	<p id="firstWeb"></p>
+	<p id="firstRating"></p>
+	</div>
+  
+	<div id = "right" > 
+	<div id="pic" align = "center"></div>
+	</div>
+
+ </div>
   <div class="button">
-    <button class="rbutton" type="button" id="nextResult">Show next restaurant!</button>
-    <button class="rbutton" onclick="location.href='custom.html'" type="button" id="searchAgain">Search again!</button>
+    <button class="rbutton" type="button" id="nextResult"><span>Show next restaurant!</span></button>
+    <button class="rbutton" onclick="location.href='homepage.html'" type="button" id="searchAgain"><span>Search again!</span></button>
   </div>
   <script>
   $(document).ready(function(){
@@ -54,7 +61,6 @@
 
   $("#get").click(function(event){
     $.get( "https://guarded-fortress-21120.herokuapp.com/request", to_pass, function(data) {
-       // console.log(data.total);
       if(data.total===0){
         $("#firstName").text("No results found, please search again")
         $("#searchAgain").show()
@@ -62,11 +68,13 @@
 
         $("#firstName").text(`Name: ${data.businesses[order].name}`)
         $("#firstPhone").text(`Phone: ${data.businesses[order].display_phone}`)
-        $("#firstWeb").html(`website: <a target=\'_blank\' href=${data.businesses[order].url}><b> here</b></a>`)
-        $("#firstRating").text(`Yelp Rating: ${data.businesses[order].rating}`)
+        $("#firstWeb").html(`Website: <a target=\'_blank\' href=${data.businesses[order].url}><b> Click here </b></a>`)
+        $("#firstRating").text(`Rating: ${data.businesses[order].rating} Stars`)
         $("#pic").html(`<img src="${data.businesses[order].image_url}" style="width:304px;height:228px;">`)
         $("#nextResult").show()
         $("#searchAgain").show()
+		$("#head2").show()
+		$("#head1").hide()
         $("#get").hide()
           order = order + 1;
           console.log(localStorage.getItem("number"))
@@ -76,21 +84,22 @@
     })
     $("#nextResult").click(function(event){
       $.get( "https://guarded-fortress-21120.herokuapp.com/request", to_pass, function(data) {
-          //order = localStorage.getItem("number")
           console.log(localStorage.getItem("number"))
           try{
             console.log(data.businesses[order].name)
           } catch(err){
-            alert("I have run out of recommendations for you! Please search again!")
+            alert("That's all we could find for you :)")
           }
           $("#firstName").text(`Name: ${data.businesses[order].name}`)
 
           $("#firstPhone").text(`Phone: ${data.businesses[order].display_phone}`)
-          $("#firstWeb").html(`website: <a target=\'_blank\' href=${data.businesses[order].url}><b> here</b></a>`)
-          $("#firstRating").text(`Yelp Rating: ${data.businesses[order].rating}`)
+          $("#firstWeb").html(`Website: <a target=\'_blank\' href=${data.businesses[order].url}><b> Click here </b></a>`)
+          $("#firstRating").text(`Rating: ${data.businesses[order].rating} Stars`)
           $("#pic").html(`<img src="${data.businesses[order].image_url}" style="width:304px;height:228px;">`)
           $("#nextResult").show()
           $("#searchAgain").show()
+		  $("#head2").show()
+		  $("#head1").hide()
           $("#get").hide()
           order= order+1;
 

@@ -12,10 +12,12 @@
 					<div class="content-left">
 						<div class = "category" >
 							<h1>Category</h1>
-							<button class = "cbutton" id = "FF" val = "Fast Food" > <span> Fast Food </span></button>
-							<button class = "cbutton" id = "DI" val = "Dine In"> <span> Dine In </span></button>
-							<button class = "cbutton" id = "TO" val = "Ethnic"> <span> Ethnic Food </span></button>
+							<ul>
+							<li><button class = "cbutton" id = "FF" val = "Fast Food" > <span> Fast Food </span></button></li>
+							<li><button class = "cbutton" id = "DI" val = "Dine In"> <span> Dine In </span></button></li>
+							<li><button class = "cbutton" id = "TO" val = "Ethnic"> <span> Asian Food </span></button></li>
 							<input class = "inputs" id="typeof" >
+							</ul>
 						</div>
 						<div class = "price">
 							<h1>Pricing</h1>
@@ -49,12 +51,14 @@
 							<input class = "inputs" id="radius" >
 						</div>
 					</div>
+					
 				</div>
 				
 
 			
 <script>
 $(document).ready(function() {
+
   if (typeof(Storage) !== "undefined") {
   
   //-------------------------------------------------	Type of Food	----------------------------------------------------------------------------//
@@ -68,7 +72,7 @@ $(document).ready(function() {
   })  
   
   $("#TO").click(function(event){
-  localStorage.setItem("typeof", "Ethnic" + " restaurant")
+  localStorage.setItem("typeof", "Asian" + " restaurant")
   })
 
 	//-----------------------------------------------	Radius	------------------------------------------------------------------------------------//
@@ -126,5 +130,70 @@ $(document).ready(function() {
     };
 });
 </script>
+<!------------------------- Button Highlights ------------------------>
+					<script>
+					 <script>
+					 var b1 = document.getElementById("FF");
+					 var b2 = document.getElementById("DI");
+					 var b3 = document.getElementById("TO");
+					 var c1 = document.getElementById("D");
+					 var c2 = document.getElementById("DD");
+					 var c3 = document.getElementById("DDD");
+					 var d1 = document.getElementById("ten");
+					 var d2 = document.getElementById("twenty");
+					 var d3 = document.getElementById("twentyfive");
+					 b1.onclick = function() {
+					 b1.style.background = "#D5CF00";
+					 b2.style.background = "#f4511e";   
+					 b3.style.background = "#f4511e"; 
+					 }
+
+					 b2.onclick = function() {
+					 b1.style.background = "#f4511e";
+					 b2.style.background = "#D5CF00";   
+					 b3.style.background = "#f4511e"; 
+					 }
+					 
+					 b3.onclick = function() {
+					 b1.style.background = "#f4511e";
+					 b2.style.background = "#f4511e";   
+					 b3.style.background = "#D5CF00"; 
+					 }
+					 c1.onclick = function() {
+					 c1.style.background = "#D5CF00";
+					 c2.style.background = "#f4511e";   
+					 c3.style.background = "#f4511e"; 
+					 }
+
+					 c2.onclick = function() {
+					 c1.style.background = "#f4511e";
+					 c2.style.background = "#D5CF00";   
+					 c3.style.background = "#f4511e"; 
+					 }
+					 
+					 c3.onclick = function() {
+					 c1.style.background = "#f4511e";
+					 c2.style.background = "#f4511e";   
+					 c3.style.background = "#D5CF00"; 
+					 }
+					 d1.onclick = function() {
+					 d1.style.background = "#D5CF00";
+					 d2.style.background = "#f4511e";   
+					 d3.style.background = "#f4511e"; 
+					 }
+
+					 d2.onclick = function() {
+					 d1.style.background = "#f4511e";
+					 d2.style.background = "#D5CF00";   
+					 d3.style.background = "#f4511e"; 
+					 }
+					 
+					 d3.onclick = function() {
+					 d1.style.background = "#f4511e";
+					 d2.style.background = "#f4511e";   
+					 d3.style.background = "#D5CF00"; 
+					 }
+					</script>
+					</script>
 </body>
 </html>

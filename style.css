@@ -105,6 +105,12 @@ h1{
     height: auto;
     max-width: 100%;
 }
+
+ul li{
+  display: inline;
+}
+
+ 
 /*----------------------------------------BUTTON STYLING----------------------------------------------*/
 
 .cbutton {
@@ -145,6 +151,12 @@ h1{
   opacity: 1;
   right: 0;
 }
+
+.priority{
+	background-color: white;
+}
+.active{background-color:#E7E000;}
+
 /*----------------------------------------BUTTON STYLING----------------------------------------------*/
 
 .go {

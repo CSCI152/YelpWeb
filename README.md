@@ -15,3 +15,9 @@ Be able to randomly generate restaurant
 Have user paramters such as Zip Code,Distance, Risk Factor, Type of Food
 Use Yelp API
 Make both a website and phone application
+
+Testing
+
+TestCafe
+JSFiddle
+Stress Testing
